@@ -1,0 +1,14 @@
+CLASS: AudioManagerWrapper
+
+METHODS:
+	AudioManagerWrapper();
+    ~AudioManagerWrapper();
+    AudioManagerSfx * sfx() const;
+    AudioManagerMusic * music() const;
+    void init() throw (Exception);
+	void open_audio();
+    void close_audio();
+
+ATTRIBUTES:
+	AudioManagerSfx *sfx_manager;
+    AudioManagerMusic *music_manager;

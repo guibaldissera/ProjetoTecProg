@@ -1,0 +1,12 @@
+CLASS: Level
+
+METHODS:
+    Level(const string& id, const string& next = "");
+    string next() const;
+    bool finished() const;
+    void finish();
+    void set_next(const string& next);
+	
+ATTRIBUTES:
+	string m_next;
+    bool m_done;

@@ -1,0 +1,13 @@
+CLASS: EventsManager
+
+METHODS:
+	EventsManager();
+    ~EventsManager();
+    void dispatch_pending_events();
+    void register_listener(Listener *listener);
+    void unregister_listener(Listener *listener);
+
+ATTRIBUTES:
+	class Impl;
+    unique_ptr<Impl> m_impl;
+	list<Listener *> m_listeners;

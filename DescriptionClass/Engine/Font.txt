@@ -1,0 +1,20 @@
+CLASS: Font
+
+METHODS:
+	Font(TTF_Font *font, const string& path, int size = 20);
+    ~Font();
+    static Font * from_file(const string& path) throw (Exception);
+    TTF_Font * font() const;
+    int size() const;
+    Style style() const;
+    void set_size(int size);
+    void set_style(Style style);
+	void change_size(int size);
+ATTRIBUTES:
+	typedef enum { NORMAL, BOLD, ITALIC } Style;
+	class Impl;
+    unique_ptr<Impl> m_impl;
+	TTF_Font *m_font;
+    string m_path;
+    int m_size;
+    Style m_style;

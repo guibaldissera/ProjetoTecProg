@@ -1,0 +1,27 @@
+CLASS: Animation
+
+METHODS:
+	Animation(const string& image, double x, double y, double w, double h, int frames, unsigned long speed_in_ms, bool loop = false);
+    ~Animation();
+    void update(unsigned long elapsed);
+    void set_row(int row);
+    void draw(double x, double y);
+    void reset();
+    bool is_done() const;
+    double w() const;
+    double h() const;
+
+ATTRIBUTES:
+	class Impl;
+	double x;
+	double y;
+	double w;
+	double h;
+    int frames;
+    int frame;
+    unsigned long speed;
+    bool loop;
+	bool done;
+    unsigned long last;
+    unique_ptr<Impl> m_impl;
+    shared_ptr<Texture> texture;

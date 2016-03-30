@@ -1,0 +1,12 @@
+CLASS: Image
+
+METHODS:
+	Image(Object *parent, const string& image);
+    ~Image();
+	void draw_self();
+	
+ATTRIBUTES:
+    class Impl;
+	Image *m_parent;
+    unique_ptr<Impl> m_impl;
+    shared_ptr<Texture> m_texture;

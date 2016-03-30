@@ -1,0 +1,13 @@
+CLASS: Point
+
+METHODS:
+	Point(double x = 0, double y = 0);
+    double x() const;
+    double y() const;
+    void set_x(double x);
+    void set_y(double y);
+    void set(double x, double y);
+	
+ATTRIBUTES:
+	double m_x;
+	double m_y;

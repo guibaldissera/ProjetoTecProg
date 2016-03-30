@@ -1,0 +1,15 @@
+CLASS: AudioManager (TEMPLATE)
+
+METHODS:
+	AudioManager();
+
+    void play(const string& path, const int times);
+    void set_volume(const int percent);
+    void pause();
+    void resume();
+    void stop();
+    void fade_out(const double seconds);
+    bool faded_out();
+
+ATTRIBUTES:
+

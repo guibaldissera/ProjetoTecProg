@@ -1,0 +1,49 @@
+CLASS: Canvas
+
+METHODS:
+    Canvas(SDL_Renderer *renderer, int w, int h);
+    ~Canvas();
+    BlendMode blend_mode() const;
+    Texture * render_text(const string& text, const Color& color);
+    SDL_Renderer * renderer() const;
+    SDL_Surface * bitmap() const;
+    void set_resolution(int w, int h);
+    void set_color(const Color& color);
+    void set_font(shared_ptr<Font>& font);
+    void set_blend_mode(BlendMode mode);
+    void clear(const Color& color = Color::BLACK);
+    void update();
+    void draw(const Point& point) const;
+    void draw(const Point& point, const Color& color);
+    void draw(const Line& line) const;
+    void draw(const Line& line, const Color& color);
+    void draw(const Rect& rect) const;
+    void draw(const Rect& rect, const Color& color);
+    void draw(const Circle& circle) const;
+    void draw(const Circle& circle, const Color& color);
+    void draw(const Texture *texture, double x = 0, double y = 0, double w = 0, double h = 0) const;
+    void draw(const Texture *texture, Rect clip, double x = 0, double y = 0, double w = 0, double h = 0) const;
+    void draw(const string& text, double x = 0, double y = 0, const Color& color = Color::WHITE) const;
+    void draw(const Bitmap *bitmap, double x = 0, double y = 0) const;
+    void fill(const Rect& rect) const;
+    void fill(const Rect& rect, const Color& color);
+    void fill(const Circle& circle) const;
+    void fill(const Circle& circle, const Color& color);
+	void draw_circle_points(int cx, int cy, int x, int y) const;
+    void fill_circle_points(int cx, int cy, int x, int y) const;
+    void update_bitmap();
+    int w() const;
+    int h() const;
+    const Color& color() const;
+    shared_ptr<Font> font() const;
+
+ATTRIBUTES:
+	typedef enum { NONE, BLEND } BlendMode;
+    Color m_color;
+    BlendMode m_blend_mode;
+	SDL_Renderer *m_renderer;
+    SDL_Surface *m_bitmap;
+    SDL_Texture *m_texture;
+    shared_ptr<Font> m_font;
+    int m_w;
+	int m_h;

@@ -1,0 +1,20 @@
+CLASS: Camera
+
+METHODS:
+    Camera(double x = 0, double y = 0, double w = 1, double h = 1, Mode mode = STATIC);
+    ~Camera();
+    Mode mode() const;
+    void set_mode(Mode mode);
+    void follow(const Object* object);
+    void set_limits(const Rect& limits);
+    void update_self(unsigned long elapsed);
+    void draw_self();
+
+ATTRIBUTES:
+	typedef enum { STATIC, FOLLOWING } Mode;
+	class Impl;
+    unique_ptr<Impl> m_impl;
+	Camera *m_camera;
+    Mode m_mode;
+    const Object *m_target;
+    Rect m_limits;

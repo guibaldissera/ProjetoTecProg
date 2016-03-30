@@ -1,0 +1,27 @@
+CLASS: Button
+
+METHODS:
+	Button(Object *parent, ObjectID id, double w, double h);
+    Button(Object *parent, ObjectID id, const string& idle_image_id, const string& active_image_id);
+    ~Button();
+    bool on_event(const MouseButtonEvent& event);
+    bool on_event(const MouseMotionEvent& event);
+    void set_text(const string& text, const Color& color = Color::BLACK);
+    void set_color(const Color& idle, const Color& active);
+    void set_border(int thickness = 1, const Color& color = Color::BLACK);
+    void draw_self();
+
+ATTRIBUTES:
+	class Impl;
+	Button *m_button;
+    Text *m_text;
+    Color m_idle;
+	Color m_active;
+	Color m_border;
+    int m_thickness;
+    State m_state;
+    shared_ptr<Texture> m_idle_texture;
+	shared_ptr<Texture> m_active_texture;
+    unique_ptr<Impl> m_impl;
+	static ActionID clickedID;
+	

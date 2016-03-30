@@ -1,0 +1,20 @@
+CLASS: MouseMotionEvent
+
+METHODS:
+    MouseMotionEvent(int x, int y, int x_rel, int y_rel, MotionState left, MotionState right, MotionState middle);
+    MotionState state(Button button) const;
+    int x() const;
+    int y() const;
+    int x_rel() const;
+    int y_rel() const;
+    static MouseMotionEvent from_SDL(const SDL_Event& event);
+	
+ATTRIBUTES:
+	typedef enum { DOWN, UP } MotionState;
+    typedef enum { LEFT, RIGHT, MIDDLE } Button;
+    MotionState m_buttons[3];
+	int m_x;
+	int m_y;
+    int m_x_rel;
+	int m_y_rel;
+	

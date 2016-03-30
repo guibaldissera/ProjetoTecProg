@@ -1,0 +1,13 @@
+CLASS: Circle
+
+METHODS:
+    Circle(const Point& center = Point(), double radius = 0);
+    Point center() const;
+    void set_center(const Point& center);
+    void set_radius(double radius);
+    void set(const Point& center, double radius);
+    double radius() const;
+
+ATTRIBUTES:
+	Point m_center;
+    double m_r;

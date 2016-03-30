@@ -1,0 +1,24 @@
+CLASS: FrontEnd
+
+METHODS:
+	FrontEnd(const string& id, const string& next, const string& image, unsigned long duration = 3000, const Color& background = Color::BLACK);
+    ~FrontEnd();
+    bool on_event(const MouseButtonEvent& event);
+    bool on_event(const KeyboardEvent& event);
+    bool on_event(const JoyStickEvent& event);
+	void update_self(unsigned long elapsed);
+    void draw_self();
+	
+ATTRIBUTES:
+	class Impl;
+    unique_ptr<Impl> m_impl;
+	Level *m_parent;
+    shared_ptr<Texture> m_texture;
+    Color m_background;
+	Color m_fad;
+    unsigned long m_start;
+	unsigned long m_duration;
+    unsigned long m_in;
+	unsigned long m_out;
+    int m_x;
+	int m_y;

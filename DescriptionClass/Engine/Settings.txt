@@ -1,0 +1,11 @@
+CLASS: Settings
+
+METHODS:
+	static Settings * from_file(const string& path) throw (Exception);
+    void save(const string& path) throw (Exception);
+    map< string, map<string, string> > sections() const;
+    template<typename T> T read(const string& section, const string& name, const T& default_value) const;
+    template<typename T> void write(const string& section, const string& name, const T& value);
+	
+ATTRIBUTES:
+	map< string, map<string, string> > m_sections;

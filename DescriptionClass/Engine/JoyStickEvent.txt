@@ -1,0 +1,13 @@
+CLASS: JoyStickEvent
+
+METHODS:
+    JoyStickEvent(State state, Button button);
+    State state() const;
+    Button button() const;
+    static JoyStickEvent from_SDL(const SDL_Event& event);
+	
+ATTRIBUTES:
+    typedef enum {PRESSED, RELEASED} State;
+    typedef enum {X, CIRCLE, SQUARE, TRIANGLE, SHARE, HOME, START, L3, R3, L1, R1, UP, DOWN, LEFT, RIGHT} Button;
+	State m_state;
+    Button m_button;

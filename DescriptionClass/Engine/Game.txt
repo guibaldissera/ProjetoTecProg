@@ -1,0 +1,21 @@
+CLASS: Game
+
+METHODS:
+	Game(const string& id);
+    virtual ~Game();
+    void init(const string& title, int w, int h, double scale = 1.0, bool fullscreen = false, int volume = 50) throw (Exception);
+    void init(const string& settings) throw (Exception);
+    void run();
+    void process_input();
+    void update_screen();
+    void delay(unsigned long ms);
+	unsigned long update_timestep() const;
+    bool on_event(const SystemEvent& event);
+    bool on_event(const KeyboardEvent& event);
+	virtual Level * load_level(const string& id);
+	
+ATTRIBUTES:
+    Environment *env;
+    Level *m_level;
+	string m_id;
+    bool m_done;

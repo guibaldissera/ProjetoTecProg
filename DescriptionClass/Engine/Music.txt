@@ -1,0 +1,14 @@
+CLASS: Music
+
+METHODS:
+    explicit Music(Mix_Music* const music);
+    ~Music();
+    Mix_Music * mix_music() const;
+    string path() const;
+    static Music * from_file(const string& path) throw (Exception);
+	
+ATTRIBUTES:
+	class Impl;
+    unique_ptr<Impl> m_impl;
+	 Mix_Music* const m_mix_music;
+	
