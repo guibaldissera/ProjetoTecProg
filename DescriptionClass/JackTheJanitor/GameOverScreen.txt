@@ -1,0 +1,11 @@
+CLASS: GameOverScreen
+
+METHODS:
+	void drawSelf(SDL_Surface *surface);
+	GameOverScreen(std::string filename);
+        ~GameOverScreen();
+
+ATRIBUTTES:
+	SDL_Surface *gameOverScreen;
+	static const int LEVEL_WIDTH = 854;
+        static const int LEVEL_HEIGHT = 480;

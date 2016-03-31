@@ -1,0 +1,11 @@
+CLASS: InitScreen
+
+METHODS:
+	void drawSelf(SDL_Surface *surface);
+	InitScreen(std::string filename);
+	 ~InitScreen();
+
+ATRIBUTTES:
+	SDL_Surface *initScreen;
+	static const int LEVEL_WIDTH = 854;
+        static const int LEVEL_HEIGHT = 480;

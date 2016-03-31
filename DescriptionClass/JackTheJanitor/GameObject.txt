@@ -1,0 +1,9 @@
+CLASS: GameObject
+
+METHODS:
+	virtual ~GameObject();
+        void draw(SDL_Surface *surface);
+        void addChild(GameObject* child);
+ATRIBUTTES:
+	vector<GameObject*> children;
+	virtual void drawSelf(SDL_Surface *surface) = 0;

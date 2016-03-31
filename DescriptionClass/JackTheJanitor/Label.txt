@@ -1,0 +1,14 @@
+CLASS: Label
+
+METHODS:
+	void drawSelf(SDL_Surface * surface);
+	bool wasClicked(int xMouse, int yMouse);
+	Label(std::string filename, int xPosition, int yPosition);
+	~Label();
+
+ATRIBUTTES:
+	SDL_Surface *label;
+	int xPosition;
+	int yPosition;
+	static const int LABEL_WIDTH = 178;
+	static const int LABEL_HEIGHT = 100;
