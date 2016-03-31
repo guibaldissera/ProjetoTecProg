@@ -1,0 +1,8 @@
+CLASS: Resource
+
+METHODS:
+	virtual void load(const string& name) = 0;
+
+ATTRIBUTES:
+    	
+	

@@ -1,0 +1,14 @@
+CLASS: ResourcesManager
+
+METHODS:
+	ResourcesManager();
+	static ResourcesManager *getInstance();
+        RawImage* getImage(const string &name);
+        void release(RawImage* image);
+        void load(const string &resourcesDescription);
+
+ATTRIBUTES:
+    	static ResourcesManager* instance = NULL;
+	class ResourcesInfo
+	vector<ResourcesInfo*> resources;
+	

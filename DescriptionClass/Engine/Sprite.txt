@@ -1,0 +1,40 @@
+CLASS: SpriteState
+
+METHODS:
+	virtual void update(unsigned long elapsed) = 0;
+    	virtual void draw() = 0;
+    	virtual void enter(int from) = 0;
+    	virtual void leave(int to) = 0;
+   	virtual bool on_event(const KeyboardEvent&);
+    	virtual bool on_event(const MouseButtonEvent&);
+    	virtual bool on_event(const MouseMotionEvent&);
+    	virtual bool on_event(const JoyStickEvent&);
+
+ATTRIBUTES:
+	
+
+CLASS: Sprite
+
+METHODS:
+	Sprite(Object *parent, ObjectID id);
+   	~Sprite();
+    	void report_event(int event);
+    	void change_state(int to, int from);
+    	void add_state(int id, SpriteState *state);
+    	void add_transition(int event, int from, int to);
+	SpriteState * state() const;
+	bool on_event(const KeyboardEvent& event);
+    	bool on_event(const MouseButtonEvent& event);
+    	bool on_event(const MouseMotionEvent& event);
+    	bool on_event(const JoyStickEvent& event);
+	void update_self(unsigned long elapsed);
+   	void draw_self();
+
+ATTRIBUTES:
+	class Impl;
+    	unique_ptr<Impl> m_impl;
+	Sprite *m_sprite;
+   	int m_state_id;
+    	SpriteState *m_state;
+    	map< pair<int, int>, int > m_fsm;
+    	map<int, SpriteState *> m_states;

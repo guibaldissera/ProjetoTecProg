@@ -1,0 +1,11 @@
+CLASS: SystemEvent
+
+METHODS:
+	SystemEvent(Type type);
+	Type type() const;
+	static SystemEvent from_SDL(const SDL_Event& event);
+
+
+ATTRIBUTES:
+	typedef enum { UNKNOWN, QUIT } Type;
+	Type m_type;

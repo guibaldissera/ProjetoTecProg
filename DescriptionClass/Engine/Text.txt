@@ -1,0 +1,12 @@
+CLASS: Text
+
+METHODS:
+	Text(Object *parent, const string& text, const Color& color = Color::BLACK);
+   	~Text();
+	void draw_self();
+
+ATTRIBUTES:
+	class Impl;
+    	unique_ptr<Impl> m_impl;
+	Text *m_parent;
+    	Texture *m_texture;
