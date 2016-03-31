@@ -1,0 +1,19 @@
+CLASS: Timer
+
+METHODS:
+	Timer();
+	void start();
+   	void stop();
+    	void pause();
+    	void unpause();
+    	void waitDiff(float ratioFPS);
+	int get_ticks();
+	bool is_started();
+    	bool is_paused();
+
+ATTRIBUTES:
+	int startTicks;
+	int pausedTicks;
+	bool paused;
+	bool started;
+

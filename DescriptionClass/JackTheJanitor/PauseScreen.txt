@@ -1,0 +1,11 @@
+CLASS: PauseScreen
+
+METHODS:
+	void drawSelf(SDL_Surface *surface);
+	PauseScreen(std::string filename);
+        ~PauseScreen();
+
+ATTRIBUTES:
+	SDL_Surface *pauseScreen;
+	static const int LEVEL_WIDTH = 854;
+        static const int LEVEL_HEIGHT = 480;

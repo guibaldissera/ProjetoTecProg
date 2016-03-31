@@ -1,0 +1,17 @@
+CLASS: Level
+
+METHODS:
+	void drawSelf(SDL_Surface *surface);
+	Level(std::string filename);
+        ~Level();
+	vector<Box*> getBoxes();
+
+ATTRIBUTES:
+	SDL_Surface *level;
+	vector<Enemy*> enemies;
+	vector<Box*> boxes;
+	vector<Box*> grid[12];
+	static const int LEVEL_WIDTH = 456;
+        static const int LEVEL_HEIGHT = 456;
+        static const int LEVEL_X_OFFSET = 50;
+        static const int LEVEL_Y_OFFSET = 10;

@@ -1,0 +1,13 @@
+CLASS: RawImage
+
+METHODS:
+	RawImage();
+        ~RawImage();
+        void load(const string& name);
+        int width() const;
+        int height() const;
+        SDL_Surface *pixels() const;
+
+ATTRIBUTES:
+	 SDL_Surface *_pixels;
+	

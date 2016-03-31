@@ -1,0 +1,28 @@
+CLASS: ScoreScreen
+
+METHODS:
+	ScoreScreen();
+    	~ScoreScreen();
+    	void drawSelf(SDL_Surface *surface);
+    	void popLine();
+    	void increaseScore(int value);
+    	void lines(int numero);
+    	void scoring(int value);
+	void updateSelf();  	
+	int getLine();
+    	int getScorePoints();
+
+ATTRIBUTES:
+    	SDL_Surface *armario;
+    	TTF_Font *scoreFont;
+    	SDL_Surface *scoreMessage;
+    	SDL_Surface *boxMessage;
+    	SDL_Color scoreTextColor;
+    	char scoreString[30];
+    	char lineString[30];
+    	int scorePoints;
+    	int lineLeft;
+	static const int SCORE_WIDTH = 282;
+    	static const int SCORE_HEIGHT = 456;
+    	static const int SCORE_X_OFFSET = 506;
+    	static const int SCORE_Y_OFFSET = 10;
